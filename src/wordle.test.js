@@ -15,8 +15,13 @@ describe("UCB-Wordle  -> Ganar", () => {
 });
 
 describe("UCB-Wordle  -> Pista palabra primera posicion", () => {
-  it("Deberia responder 'Ganaste!' si se adivina La palabra", () => {
+  it("En caso de que la palabra sea 'marte' y el intento 'moler' deberia devoler 'm'", () => {
     const wordle = new Wordle("marte");
     expect(wordle.adivinar("moler")).toEqual("m");
+  });
+  
+  it("En caso de que la palabra sea 'palta' y el intento 'peras' deberia devoler 'p'", () => {
+    const wordle = new Wordle("palta");
+    expect(wordle.adivinar("peras")).toEqual("p");
   });
 });
