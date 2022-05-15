@@ -7,8 +7,5 @@ describe("UCB-Wordle  -> Ganar", () => {
     expect(wordle.adivinar("a")).toEqual("Ganaste!");
   });
 
-  it("Deberia mostrar '' si no  se adivina La palabra", () => {
-    const wordle = new Wordle("a");
-    expect(wordle.adivinar("b")).toEqual("");
-  });
+
 });
