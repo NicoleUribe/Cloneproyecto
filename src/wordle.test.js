@@ -11,5 +11,12 @@ describe("UCB-Wordle  -> Ganar", () => {
     const wordle = new Wordle("a");
     expect(wordle.adivinar("b")).toEqual("");
   });
-  
+
+});
+
+describe("UCB-Wordle  -> Pista palabra primera posicion", () => {
+  it("Deberia responder 'Ganaste!' si se adivina La palabra", () => {
+    const wordle = new Wordle("marte");
+    expect(wordle.adivinar("moler")).toEqual("m");
+  });
 });
