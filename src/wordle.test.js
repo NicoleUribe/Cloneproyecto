@@ -40,10 +40,10 @@ describe("UCB-Wordle  -> Pista palabra dos posiciones", () => {
 
 });
 
+
 describe("UCB-Wordle  -> Pista palabra en posicion correcta", () => {
   it("En caso de que la palabra sea 'molde' y el intento 'mosca' deberia devoler 'mo'", () => {
     const wordle = new Wordle("torta");
-    expect(wordle.adivinar("morfa")).toEqual("moa");
+    expect(wordle.adivinar("morfa")).toEqual("ora");
   });  
-
 });
