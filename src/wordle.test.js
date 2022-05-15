@@ -32,5 +32,18 @@ describe("UCB-Wordle  -> Pista palabra dos posiciones", () => {
     const wordle = new Wordle("molde");
     expect(wordle.adivinar("mosca")).toEqual("mo");
   });
-    
+  
+  it("En caso de que la palabra sea 'carta' y el intento 'camas' deberia devoler 'mo'", () => {
+    const wordle = new Wordle("carta");
+    expect(wordle.adivinar("camas")).toEqual("ca");
+  });
+
+});
+
+describe("UCB-Wordle  -> Pista palabra en posicion correcta", () => {
+  it("En caso de que la palabra sea 'molde' y el intento 'mosca' deberia devoler 'mo'", () => {
+    const wordle = new Wordle("torta");
+    expect(wordle.adivinar("morfa")).toEqual("moa");
+  });  
+
 });
