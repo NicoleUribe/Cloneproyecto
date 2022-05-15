@@ -46,4 +46,8 @@ describe("UCB-Wordle  -> Pista palabra en posicion correcta", () => {
     const wordle = new Wordle("torta");
     expect(wordle.adivinar("morfa")).toEqual("ora");
   });  
+  it("En caso de que la palabra sea 'carta' y el intento 'choza' deberia devoler 'mo'", () => {
+    const wordle = new Wordle("carta");
+    expect(wordle.adivinar("choza")).toEqual("ca");
+  });  
 });
