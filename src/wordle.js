@@ -2,13 +2,15 @@ class Wordle{
     constructor(palabra) {
         this.palabra = palabra;
     }
-    adivinar(intento) {   
+    adivinar(intento) {           
+        let respuesta = ""
         if(intento == this.palabra) 
-            return "Ganaste!";
+            return "Ganaste!";                 
         if(intento[0] == this.palabra[0])
-            return intento[0];
-        else 
-            return ""
+            respuesta =  respuesta + intento[0]        
+        if(intento[1] == this.palabra[1])
+            respuesta =  respuesta + intento[1]
+        return respuesta;
     }
 }
 export default Wordle
