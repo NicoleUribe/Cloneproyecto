@@ -1,16 +1,37 @@
 <html>
   <head></head>
   <body>
-
-
     <h1>WORDLE</h1>
     <form id="codigosecreto-form">
       <label for="codigosecreto"> Codigo Secreto:</label>
-    <input type="codigoSecreto" id="clave1" minlength= "4" maxlength="6"/><br>
-    <input type="submit" value="Adivinar" />
+    <input type="string" id="palabra" minlength= "4" maxlength="6"/><br>
+    <input type="submit" value="Adivinar" onclick="rondas()" /><br>
+    <label id="intentos">Intentos</label>
+    <label id="cont">0</label><br>
+    <script>
+      var res=0;
+      function rondas(){
+        if(res<10){
+            ++res;
+            document.getElementById('cont').innerHTML = res;
+            if("perro"==palabra.value) res=0;
+          }
+          else{
+
+            var mensaje=window.confirm("el juego termino.La clave era "+clave1.value+" Quiere volver a jugar?" );
+            
+            if(mensaje){
+              document.getElementById('cont').innerHTML="0";
+              res=0;
+              volverAEmpezar();
+              document.getElementById('resultado-div').innerHTML="<p>"+"********** O T R A   P A R T I D A **********"
+            }
+          }
+      }
+    </script>
+
     </form>
     <div id="resultado-div"></div>
-
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>

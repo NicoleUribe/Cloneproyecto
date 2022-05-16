@@ -1,15 +1,15 @@
-import sumar from "./sumador";
+import Wordle from "./wordle";
+import sumar from "./wordle";
+const word = new Wordle();
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
+const form = document.querySelector("#codigosecreto-form");
 const div = document.querySelector("#resultado-div");
+
+const palabra = document.querySelector("#palabra");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  div.innerHTML ="<p>" + word.adivinar(palabra.value) + "</p>";
+  if(word.adivinar(palabra.value)=="Ganaste!")
+  window.alert("¡ ¡ ¡ G  A  N  A  S  T  E ! ! ! ");
 });
