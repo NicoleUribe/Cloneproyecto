@@ -45,16 +45,16 @@ describe("UCB-Wordle  -> Pista letra en posicion incorrecta", () => {
 });
 
 describe("UCB-Wordle  -> Pista letra no incluida en la palabra", () => {  
-  it("En caso de que la palabra sea 'palta' y el intento 'c' deberia devoler 'mo'", () => {
+  it("En caso de que la palabra sea 'palta' y el intento 'c' deberia devoler 'c'", () => {
     const wordle = new Wordle("palta");
     expect(wordle.lestrasIncorrecta("c")).toEqual("c");
-  });
-  it("En caso de que la palabra sea 'poste' y el intento 'a' deberia devoler 'mo'", () => {
-    const wordle = new Wordle("poste");
-    expect(wordle.lestrasIncorrecta("a")).toEqual("a");
-  });
-  it("En caso de que la palabra sea 'rimas' y el intento 'po' deberia devoler 'mo'", () => {
+  });  
+  it("En caso de que la palabra sea 'rimas' y el intento 'po' deberia devoler 'po'", () => {
     const wordle = new Wordle("rimas");
     expect(wordle.lestrasIncorrecta("po")).toEqual("po");
+  });
+  it("En caso de que la palabra sea 'tocos' y el intento 'maria' deberia devoler 'maria'", () => {
+    const wordle = new Wordle("tocos");
+    expect(wordle.lestrasIncorrecta("maria")).toEqual("maria");
   });
 });
