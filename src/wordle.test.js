@@ -41,5 +41,9 @@ describe("UCB-Wordle  -> Pista palabra en posicion incorrecta", () => {
   it("En caso de que la palabra sea 'carta' y el intento 'ta' deberia devoler 'mo'", () => {
     const wordle = new Wordle("carta");
     expect(wordle.lestrasPosIncorrecta("ta")).toEqual("ta");
-  });  
+  });
+  it("En caso de que la palabra sea 'facil' y el intento 'prisa' deberia devoler 'mo'", () => {
+    const wordle = new Wordle("facil");
+    expect(wordle.lestrasPosIncorrecta("prisa")).toEqual("ia");
+  });
 });

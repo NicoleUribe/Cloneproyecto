@@ -21,10 +21,11 @@ class Wordle{
     }
     lestrasPosIncorrecta(intento){
         let respuesta = ""
-        if(this.palabra.includes(intento[0]))
-            respuesta = respuesta + intento[0]
-        if(this.palabra.includes(intento[1]))
-            respuesta = respuesta + intento[1]
+        for(let i =0; i<this.palabra.length;i++){
+            if(this.palabra.includes(intento[i])){
+                respuesta += intento[i]
+            }
+        }        
         return respuesta
     }
 }
