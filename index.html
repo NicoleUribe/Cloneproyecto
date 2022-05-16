@@ -5,7 +5,7 @@
     <form id="codigosecreto-form">
       <label for="codigosecreto"> Codigo Secreto:</label>
     <input type="string" id="palabra" minlength= "4" maxlength="6"/><br>
-    <input type="submit" value="Adivinar" onclick="rondas()" /><br>
+    <input type="button" value="Adivinar"  onclick="rondas()" /><br>
     <label id="intentos">Intentos</label>
     <label id="cont">0</label><br>
     <script>
@@ -18,7 +18,7 @@
           }
           else{
 
-            var mensaje=window.confirm("el juego termino.La clave era "+clave1.value+" Quiere volver a jugar?" );
+            var mensaje=window.confirm("el juego termino.La clave era "+palabra.value+" Quiere volver a jugar?" );
             
             if(mensaje){
               document.getElementById('cont').innerHTML="0";
