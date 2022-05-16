@@ -28,3 +28,10 @@ describe("UCB-Wordle  -> Pista palabra en posicion correcta", () => {
     expect(wordle.adivinar("peras")).toEqual("p");
   });
 });
+
+describe("UCB-Wordle  -> Pista palabra en posicion incorrecta", () => {
+  it("En caso de que la palabra sea 'corte' y el intento 'santo' deberia devoler 'mo'", () => {
+    const wordle = new Wordle("corte");
+    expect(wordle.lestrasPosIncorrecta("santo")).toEqual("o");
+  });
+});
