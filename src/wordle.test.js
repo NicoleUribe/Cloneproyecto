@@ -32,6 +32,10 @@ describe("UCB-Wordle  -> Pista palabra en posicion correcta", () => {
 describe("UCB-Wordle  -> Pista palabra en posicion incorrecta", () => {
   it("En caso de que la palabra sea 'corte' y el intento 'santo' deberia devoler 'mo'", () => {
     const wordle = new Wordle("corte");
-    expect(wordle.lestrasPosIncorrecta("santo")).toEqual("o");
-  });
+    expect(wordle.lestrasPosIncorrecta("o")).toEqual("o");
+  });  
+  it("En caso de que la palabra sea 'molde' y el intento 'cetro' deberia devoler 'mo'", () => {
+    const wordle = new Wordle("molde");
+    expect(wordle.lestrasPosIncorrecta("e")).toEqual("e");
+  });  
 });

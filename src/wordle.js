@@ -20,7 +20,8 @@ class Wordle{
         return respuesta;
     }
     lestrasPosIncorrecta(intento){
-        return "o"
+        if(this.palabra.includes(intento))
+        return intento
     }
 }
 export default Wordle
