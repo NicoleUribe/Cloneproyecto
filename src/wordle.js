@@ -30,7 +30,14 @@ class Wordle{
         return respuesta
     }
     lestrasIncorrecta(intento){
-        return "c";
+        let respuesta = ""
+        if(!this.palabra.includes(intento[0])){
+            respuesta = respuesta + intento[0]
+        }
+        if(!this.palabra.includes(intento[1]) && intento[1]!="undefined"){
+            respuesta = respuesta + intento[1]
+        }
+        return respuesta
     }
 }
 export default Wordle
