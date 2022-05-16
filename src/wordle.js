@@ -7,7 +7,8 @@ class Wordle{
         if(this.palabra == intento){
             return "Ganaste!"
         }
-        respuesta = this.letrasCorectas(intento);        
+        //respuesta = this.letrasCorectas(intento); 
+        //respuesta = this.lestrasPosIncorrecta(intento);
         return respuesta;
     }
     letrasCorectas(intento){
@@ -27,6 +28,9 @@ class Wordle{
             }
         }        
         return respuesta
+    }
+    lestrasIncorrecta(intento){
+        return "c";
     }
 }
 export default Wordle
