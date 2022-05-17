@@ -1,40 +1,25 @@
 <html>
-  <head></head>
   <body>
-<<<<<<< HEAD
-    <h1 id="titulo">UCB-WORDLE</h1>
-=======
-    <h1>WORDLE</h1>
-    <form id="codigosecreto-form">
-      <label for="codigosecreto"> Codigo Secreto:</label>
-    <input type="string" id="palabra" minlength= "4" maxlength="6"/><br>
-    <input type="button" value="Adivinar"  onclick="rondas()" /><br>
-    <label id="intentos">Intentos</label>
-    <label id="cont">0</label><br>
-    <script>
-      var res=0;
-      function rondas(){
-        if(res<10){
-            ++res;
-            document.getElementById('cont').innerHTML = res;
-            if("perro"==palabra.value) res=0;
-          }
-          else{
-
-            var mensaje=window.confirm("el juego termino.La clave era "+palabra.value+" Quiere volver a jugar?" );
-            
-            if(mensaje){
-              document.getElementById('cont').innerHTML="0";
-              res=0;
-              volverAEmpezar();
-              document.getElementById('resultado-div').innerHTML="<p>"+"********** O T R A   P A R T I D A **********"
-            }
-          }
+    <h1>UCB-WORDLE</h1>
+    <style>
+      h1{
+        text-align: center;
+        background-color: aquamarine;
       }
-    </script>
-
-    </form>
->>>>>>> 80c4349f12b79831eb43c99b80082c57ef60ae1e
-    <div id="resultado-div"></div>
+    </style>           
+      <form id="intento-form">
+        <label for="intento">Palabra: </label>
+        <input type="text" id="intento" style="text-transform: uppercase;" minlength= "5" maxlength="5" />
+        <input type="submit" value="Adivinar" />
+        <div id="resultado-div"></div>      
+      </form>          
+    <style>
+      form{
+        width: 400px;
+        padding: 10px;
+        margin: 0 auto;        
+      }      
+    </style>
+    <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>

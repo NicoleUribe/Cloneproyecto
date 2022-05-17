@@ -1,16 +1,29 @@
-import Wordle from "./wordle";
-import sumar from "./wordle";
-const word = new Wordle();
+import wordle from "./wordle";
 
-const form = document.querySelector("#codigosecreto-form");
+const intentoForm = document.querySelector("#intento-form");
+const intentoInput = document.querySelector("#intento");
 const div = document.querySelector("#resultado-div");
+let juego = new wordle("PEINE");
+let intentos = 6
 
-const palabra = document.querySelector("#palabra");
-
-form.addEventListener("button", (event) => {
+intentoForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  div.innerHTML ="<p>" + word.adivinar(palabra.value) + "</p>";
-  div.innerHTML =div.innerHTML+"<p>" + word.adivinar(palabra.value) + "</p>";
-  if(word.adivinar(palabra.value)=="Ganaste!")
-  window.alert("¡ ¡ ¡ G  A  N  A  S  T  E ! ! ! ");
+  
+  const intento = intentoInput.value.toUpperCase();
+  let resp1 = juego.letrasCorectas(intento);
+  let resp2 = juego.lestrasPosIncorrecta(intento);
+  let resp3 = juego.lestrasIncorrecta(intento);      
+  intentos--  
+  if(intentos>=0){
+    div.innerHTML = intentos
+    div.innerHTML = div.innerHTML + "<p> Letras que estan en palabra en la posición correcta:" + resp1 + "</p>"
+    div.innerHTML = div.innerHTML + "<p> Letras que estan en la palabra pero en posición incorrecta:" + resp2 + "</p>"
+    div.innerHTML = div.innerHTML + "<p> Letras que no estan en la palabra:" + resp3 + "</p>" 
+  }
+  if(juego.adivinar(resp1) == "¡ ¡ ¡ G  A  N  A  S  T  E ! ! ! "){
+    intentos = 0;
+  }
+  if(intentos==0){
+    div.innerHTML = "<p>" + juego.adivinar(resp1) + "</p>"    
+  }
 });
