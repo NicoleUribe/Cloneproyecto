@@ -1,15 +1,14 @@
-
 import Wordle from "./wordle";
 
 describe("UCB-Wordle  -> Ganar", () => {
-  it("Deberia responder 'Ganaste!' si se adivina La palabra", () => {
+  it("Deberia responder '¡ ¡ ¡ G  A  N  A  S  T  E ! ! !' si se adivina La palabra", () => {
     const wordle = new Wordle("artes");
-    expect(wordle.adivinar("artes")).toEqual("Ganaste!");
+    expect(wordle.adivinar("artes")).toEqual('¡ ¡ ¡ G  A  N  A  S  T  E ! ! ! ');
   });
 
-  it("Deberia mostrar '' si no  se adivina La palabra", () => {
-    const wordle = new Wordle("corte");
-    expect(wordle.adivinar("rumor")).toEqual("");
+  it("Deberia mostrar 'PERDISTE LA PALABRA ERA:' CORTE si no  se adivina La palabra", () => {
+    const wordle = new Wordle("CORTE");
+    expect(wordle.adivinar("RUMOR")).toEqual("PERDISTE LA PALABRA ERA: CORTE");
   });
 
 });
@@ -36,7 +35,7 @@ describe("UCB-Wordle  -> Pista letra en posicion incorrecta", () => {
   });  
   it("En caso de que la palabra sea 'carta' y el intento 'ta' deberia devoler 'mo'", () => {
     const wordle = new Wordle("carta");
-    expect(wordle.lestrasPosIncorrecta("ta")).toEqual("ta");
+    expect(wordle.lestrasPosIncorrecta("t")).toEqual("t");
   });
   it("En caso de que la palabra sea 'facil' y el intento 'prisa' deberia devoler 'mo'", () => {
     const wordle = new Wordle("facil");
