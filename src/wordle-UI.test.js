@@ -6,7 +6,7 @@ describe("Adivinar Palabra", () => {
     require("./presenter.js");
   });  
 
-  it("No ver ningun mensaje si intento con una palabra sin ninguna letra que coincide", () => {
+  it("Si la palabra ingresada es autos debe ser recuperada y mostrada en mayusculas", () => {
     const palabraAdivinar = document.querySelector("#intento");
     palabraAdivinar.value = "autos";
 
@@ -15,5 +15,17 @@ describe("Adivinar Palabra", () => {
 
     const resultado = document.querySelector("#resultado-div");
     expect(resultado.innerHTML).toEqual("AUTOS");
+  });
+
+  
+  it("Si la palabra ingresada es carta debe ser recuperada y mostrada en mayusculas", () => {
+    const palabraAdivinar = document.querySelector("#intento");
+    palabraAdivinar.value = "carta";
+
+    const botonAdivinar = document.querySelector("#boton-adivinar");
+    botonAdivinar.click();
+
+    const resultado = document.querySelector("#resultado-div");
+    expect(resultado.innerHTML).toEqual("CARTA");
   });
 });
