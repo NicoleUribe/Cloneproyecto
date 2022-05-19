@@ -1,0 +1,28 @@
+<html>
+  <body>    
+    <a href="index.html">
+      <input type="button" value="MENU" />
+    </a>
+    <style>
+      h1{
+        text-align: center;
+        background-color: rgb(24, 187, 73);
+      }
+    </style>      
+      <form id="intento-form">
+        <h1 id="titulo">UCB-WORDLE FACIL</h1>         
+        <label for="intento">Palabra: </label>
+        <input type="text" id="intento" style="text-transform: uppercase;" minlength= "4" maxlength="4" />
+        <input type="submit" value="Adivinar" id="boton-adivinar" />
+        <div id="resultado-div"></div>      
+      </form>           
+    <style>
+      form{
+        width: 400px;
+        padding: 10px;
+        margin: 0 auto;        
+      }      
+    </style>
+    <script type="module" src="./src/presenter.js"></script>
+  </body>
+</html>
