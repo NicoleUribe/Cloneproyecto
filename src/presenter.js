@@ -4,7 +4,9 @@ const intentoForm = document.querySelector("#intento-form");
 const intentoInput = document.querySelector("#intento");
 const botonAdivinar = document.querySelector("#boton-adivinar");
 const div = document.querySelector("#resultado-div");
-const juego = new wordle("HOJAS");
+const div2 = document.querySelector("#resultado-div2");
+const div3 = document.querySelector("#resultado-div3");
+const juego = new wordle("PEINE");
 
 let intentos = 6
 
@@ -12,10 +14,10 @@ intentoForm.addEventListener("submit", (event) => {
   event.preventDefault();
   
   const intento = intentoInput.value.toUpperCase();
-  /*let resp1 = juego.letrasCorectas(intento);
+  let resp1 = juego.letrasCorectas(intento);
   let resp2 = juego.lestrasPosIncorrecta(intento);
   let resp3 = juego.lestrasIncorrecta(intento);      
-  intentos--  
+  /*intentos--  
   if(intentos>=0){    
     div.innerHTML = "<p> Letras que estan en palabra en la posición correcta:" + resp1 + "</p>"
     div.innerHTML = div.innerHTML + "<p> Letras que estan en la palabra pero en posición incorrecta:" + resp2 + "</p>"
@@ -27,5 +29,8 @@ intentoForm.addEventListener("submit", (event) => {
   if(intentos==0){
     div.innerHTML = "<p>" + juego.adivinar(resp1) + "</p>"    
   }*/
-  div.innerHTML = intento
+  div.innerHTML = resp1
+  div2.innerHTML = resp2
+  div3.innerHTML = resp3
+  
 });
