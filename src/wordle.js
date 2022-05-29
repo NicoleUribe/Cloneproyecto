@@ -2,6 +2,7 @@ class Wordle{
     constructor(palabra) {
         this.palabra = palabra;
     }
+
     adivinar(intento) {                   
         if(this.palabra == intento){
             return "¡ ¡ ¡ G  A  N  A  S  T  E ! ! ! "
