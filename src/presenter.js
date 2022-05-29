@@ -10,6 +10,7 @@ const juego = new wordle("PEINE");
 const squares = document.getElementById("cuadrados");
 let cuadrado;
 let intentos = 6;
+let contadorEspacios = 1;
 
 document.addEventListener("DOMContentLoaded", () => {
 crearCudrados();
@@ -51,8 +52,9 @@ intentoForm.addEventListener("submit", (event) => {
 
   function insertPalabraEnCuadros(intent){
     for(let cont=0;cont<intent.length;cont++){
-      const espacio = document.getElementById(String(cont+1));
+      const espacio = document.getElementById(String(contadorEspacios));
       espacio.textContent= intent[cont];
+      contadorEspacios++;
     }
   }
   
