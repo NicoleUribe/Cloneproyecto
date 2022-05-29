@@ -50,8 +50,10 @@ intentoForm.addEventListener("submit", (event) => {
   div3.innerHTML = "<p>" + " Letras en Incorrectas: "+  resp3 +"</p>"
 
   function insertPalabraEnCuadros(intent){
-      const espacio = document.getElementById(String(1));
-      espacio.textContent= intent[0];
+    for(let cont=0;cont<intent.length;cont++){
+      const espacio = document.getElementById(String(cont+1));
+      espacio.textContent= intent[cont];
+    }
   }
   
 });
