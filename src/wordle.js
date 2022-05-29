@@ -1,8 +1,8 @@
+import palabrasAleatoria from "./palabrasAleatoria";
+
 class Wordle{
-    constructor() {
-        let myArray = ['CARTA', 'TORTA', 'PEINE', 'POSTE', 'NAIPE'];
-        var rand = Math.random()*myArray.length | 0;
-        this.palabra = myArray[rand];
+    constructor() {        
+        this.palabra = palabrasAleatoria();
     }    
     adivinar(intento) {                   
         if(this.palabra == intento){

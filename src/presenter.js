@@ -1,4 +1,6 @@
+import palabrasAleatoria from "./palabrasAleatoria";
 import wordle from "./wordle";
+import myArray from "./palabras";
 
 const intentoForm = document.querySelector("#intento-form");
 const intentoInput = document.querySelector("#intento");
@@ -10,7 +12,7 @@ let contadorEspacios = 1;
 
 document.addEventListener("DOMContentLoaded", () => {
 crearCudrados();
-function crearCudrados(){
+function crearCudrados(){  
   for(let cont = 0; cont < 30; cont ++){
     cuadrado = document.createElement("div");
     cuadrado.classList.add("cuadrado");
@@ -21,32 +23,27 @@ function crearCudrados(){
 });
 
 intentoForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  
-  function validarPalabra(intent){
-    for(let cont=0;cont<intent.length;cont++){
-      const espacio = document.getElementById(String(contadorEspacios)); 
-      if(juego.getLetra(cont) == intent[cont]){
-        espacio.textContent= intent[cont];              
-        espacio.style.background = "rgb(24, 187, 73)";
-      }
-      if(juego.getPalabra().includes(intento[cont]) && 
-         juego.getLetra(cont) != intent[cont]){
-        espacio.textContent= intent[cont];              
-        espacio.style.background = "#E5EB14";
-      }    
-      if(!juego.getPalabra().includes(intento[cont])){
-        espacio.textContent= intent[cont];              
-        espacio.style.background = "#707169";
-      }         
-      contadorEspacios++;
-    }   
-  }
-
-  const intento = intentoInput.value.toUpperCase();    
-  intentos--  
-  if(intentos>=0){        
-    validarPalabra(intento)
+  event.preventDefault();      
+  const intento = intentoInput.value.toUpperCase();      
+  if(intentos>=0 && myArray.includes(intento)){        
+    intentos--      
+      for(let cont=0;cont<intento.length;cont++){
+        const espacio = document.getElementById(String(contadorEspacios)); 
+        if(juego.getLetra(cont) == intento[cont]){
+          espacio.textContent= intento[cont];              
+          espacio.style.background = "rgb(24, 187, 73)";
+        }
+        if(juego.getPalabra().includes(intento[cont]) && 
+           juego.getLetra(cont) != intento[cont]){
+          espacio.textContent= intento[cont];              
+          espacio.style.background = "#E5EB14";
+        }    
+        if(!juego.getPalabra().includes(intento[cont])){
+          espacio.textContent= intento[cont];              
+          espacio.style.background = "#707169";
+        }         
+        contadorEspacios++;    
+    }
     intentoForm.reset()
   }
   if(juego.adivinar(intento) == "¡ ¡ ¡ G  A  N  A  S  T  E ! ! ! "){
@@ -55,4 +52,7 @@ intentoForm.addEventListener("submit", (event) => {
   if(intentos==0){
     alert(juego.adivinar(intento))
   }            
+  if(!myArray.includes(intento)){
+    confirm("Palabra no esta en la lista");    
+  }
 });
