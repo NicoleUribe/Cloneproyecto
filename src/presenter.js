@@ -52,10 +52,22 @@ intentoForm.addEventListener("submit", (event) => {
 
   function insertPalabraEnCuadros(intent){
     for(let cont=0;cont<intent.length;cont++){
-      const espacio = document.getElementById(String(contadorEspacios));
-      espacio.textContent= intent[cont];
+      const espacio = document.getElementById(String(contadorEspacios)); 
+      if(juego.getLetra(cont) == intent[cont]){
+        espacio.textContent= intent[cont];              
+        espacio.style.background = "green";
+      }
+      if(juego.getPalabra().includes(intento[cont]) && 
+         juego.getLetra(cont) != intent[cont]){
+        espacio.textContent= intent[cont];              
+        espacio.style.background = "yellow";
+      }    
+      if(!juego.getPalabra().includes(intento[cont])){
+        espacio.textContent= intent[cont];              
+        espacio.style.background = "black";
+      }   
       contadorEspacios++;
-    }
+    }    
   }
   
 });

@@ -42,5 +42,8 @@ class Wordle{
     getPalabra(){
         return this.palabra;
     }    
+    getLetra(pos){
+        return this.palabra[pos];    
+    }
 }
 export default Wordle
