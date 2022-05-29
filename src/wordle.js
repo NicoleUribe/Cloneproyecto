@@ -1,16 +1,15 @@
 class Wordle{
-    constructor(palabra) {
-        this.palabra = palabra;
-    }
-
+    constructor() {
+        let myArray = ['CARTA', 'TORTA', 'PEINE', 'POSTE', 'NAIPE'];
+        var rand = Math.random()*myArray.length | 0;
+        this.palabra = myArray[rand];
+    }    
     adivinar(intento) {                   
         if(this.palabra == intento){
             return "¡ ¡ ¡ G  A  N  A  S  T  E ! ! ! "
         }
         else
-            return "PERDISTE LA PALABRA ERA: " + this.getPalabra()
-        //respuesta = this.letrasCorectas(intento); 
-        //respuesta = this.lestrasPosIncorrecta(intento);        
+            return "PERDISTE LA PALABRA ERA: " + this.getPalabra()        
     }
     letrasCorectas(intento){
         let respuesta = ""
