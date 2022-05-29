@@ -61,11 +61,7 @@ intentoForm.addEventListener("submit", (event) => {
          juego.getLetra(cont) != intent[cont]){
         espacio.textContent= intent[cont];              
         espacio.style.background = "yellow";
-      }    
-      if(!juego.getPalabra().includes(intento[cont])){
-        espacio.textContent= intent[cont];              
-        espacio.style.background = "black";
-      }   
+      }          
       contadorEspacios++;
     }    
   }
