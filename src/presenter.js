@@ -29,7 +29,8 @@ intentoForm.addEventListener("submit", (event) => {
   const intento = intentoInput.value.toUpperCase();
   let resp1 = juego.letrasCorectas(intento);
   let resp2 = juego.lestrasPosIncorrecta(intento);
-  let resp3 = juego.lestrasIncorrecta(intento);   
+  let resp3 = juego.lestrasIncorrecta(intento);  
+  insertPalabraEnCuadros(intento); 
   /*intentos--  
   if(intentos>=0){    
     div.innerHTML = "<p> Letras que estan en palabra en la posición correcta:" + resp1 + "</p>"
@@ -47,5 +48,10 @@ intentoForm.addEventListener("submit", (event) => {
   div.innerHTML =  "<p>" + " Letras en posicion Correcta: "+  resp1 +"</p>"
   div2.innerHTML = "<p>" + " Letras en posicion Incorrecta: "+  resp2 +"</p>"  
   div3.innerHTML = "<p>" + " Letras en Incorrectas: "+  resp3 +"</p>"
+
+  function insertPalabraEnCuadros(intent){
+      const espacio = document.getElementById(String(1));
+      espacio.textContent= intent[0];
+  }
   
 });
