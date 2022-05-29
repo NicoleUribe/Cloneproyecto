@@ -23,6 +23,29 @@
         <div id="cuadrados"></div>
       </div>
     <style>
+      #contenedorCuadrados {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        overflow: hidden;
+      }
+
+      #cuadrados{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .cuadrado{
+        border: 2px solid rgb(58, 58, 60);
+        min-width: 60px;
+        min-height: 60px;
+        font-size: 2rem;
+        font-weight: bold;
+      }
       form{
         width: 400px;
         padding: 10px;
