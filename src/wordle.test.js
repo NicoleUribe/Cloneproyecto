@@ -59,7 +59,8 @@ describe("UCB-Wordle  -> Pista letra no incluida en la palabra", () => {
     expect(wordle.lestrasIncorrecta("c")).toEqual("c");
   });  
   it("En caso de que la palabra sea 'rimas' y el intento 'po' deberia devoler 'po'", () => {
-    const wordle = new Wordle("rimas");
+    const wordle = new Wordle();
+    wordle.palabra = "rimas";
     expect(wordle.lestrasIncorrecta("po")).toEqual("po");
   });
   it("En caso de que la palabra sea 'tacos' y el intento 'maria' deberia devoler 'maria'", () => {
