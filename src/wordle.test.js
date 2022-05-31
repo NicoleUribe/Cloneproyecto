@@ -28,7 +28,8 @@ describe("UCB-Wordle  -> Pista letra en posicion correcta", () => {
     expect(wordle.letrasCorectas("mosca")).toEqual("mo");
   });
   it("En caso de que la palabra sea 'palta' y el intento 'peras' deberia devoler 'p'", () => {
-    const wordle = new Wordle("palta");
+    const wordle = new Wordle();
+    wordle.palabra = "palta";
     expect(wordle.letrasCorectas("peras")).toEqual("p");
   });
 });
