@@ -9,8 +9,9 @@ describe("UCB-Wordle  -> Ganar", () => {
   });
 
   it("Deberia mostrar 'PERDISTE LA PALABRA ERA:' CORTE si no  se adivina La palabra", () => {
-    const wordle = new Wordle("CORTE");
-    expect(wordle.adivinar("RUMOR")).toEqual("PERDISTE LA PALABRA ERA: CORTE");
+    const wordle = new Wordle();
+    let palabraAl = wordle.getPalabra();
+    expect(wordle.adivinar("RUMOR")).toEqual("PERDISTE LA PALABRA ERA: "+palabraAl);
   });
 
 });
