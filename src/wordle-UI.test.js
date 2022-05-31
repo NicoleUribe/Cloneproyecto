@@ -1,4 +1,4 @@
-import fs from "fs";
+/*import fs from "fs";
 
 describe("Adivinar Palabra", () => {
   beforeAll(() => {
@@ -39,4 +39,4 @@ describe("Adivinar Palabra", () => {
     const resultado = document.querySelector("#resultado-div3");
     expect(resultado.innerHTML).toEqual("TORTA");
   });
-});
+});*/

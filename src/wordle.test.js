@@ -18,7 +18,8 @@ describe("UCB-Wordle  -> Ganar", () => {
 
 describe("UCB-Wordle  -> Pista letra en posicion correcta", () => {
   it("En caso de que la palabra sea 'molde' y el intento 'mosca' deberia devoler 'mo'", () => {
-    const wordle = new Wordle("torta");
+    const wordle = new Wordle();
+    wordle.palabra = "torta";
     expect(wordle.letrasCorectas("morfa")).toEqual("ora");
   });  
   it("En caso de que la palabra sea 'molde' y el intento 'mosca' deberia devoler 'mo'", () => {
