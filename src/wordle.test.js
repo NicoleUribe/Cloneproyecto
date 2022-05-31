@@ -36,7 +36,8 @@ describe("UCB-Wordle  -> Pista letra en posicion correcta", () => {
 
 describe("UCB-Wordle  -> Pista letra en posicion incorrecta", () => {  
   it("En caso de que la palabra sea 'molde' y el intento 'e' deberia devoler 'mo'", () => {
-    const wordle = new Wordle("molde");
+    const wordle = new Wordle();
+    wordle.palabra = "molde";
     expect(wordle.lestrasPosIncorrecta("e")).toEqual("e");
   });  
   it("En caso de que la palabra sea 'carta' y el intento 'ta' deberia devoler 'mo'", () => {
