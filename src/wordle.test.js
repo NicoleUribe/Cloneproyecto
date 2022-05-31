@@ -1,9 +1,11 @@
 import Wordle from "./wordle";
+import palabrasAleatoria from "./palabrasAleatoria";
 
 describe("UCB-Wordle  -> Ganar", () => {
   it("Deberia responder '¡ ¡ ¡ G  A  N  A  S  T  E ! ! !' si se adivina La palabra", () => {
-    const wordle = new Wordle("artes");
-    expect(wordle.adivinar("artes")).toEqual('¡ ¡ ¡ G  A  N  A  S  T  E ! ! ! ');
+    const wordle = new Wordle();
+    let palabraAl = wordle.getPalabra();
+    expect(wordle.adivinar(palabraAl)).toEqual('¡ ¡ ¡ G  A  N  A  S  T  E ! ! ! ');
   });
 
   it("Deberia mostrar 'PERDISTE LA PALABRA ERA:' CORTE si no  se adivina La palabra", () => {
