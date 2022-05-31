@@ -1,0 +1,71 @@
+<html>
+  <body>    
+    <a href="index.html">
+      <input type="button" value="TUTORIAL" />
+    </a>
+    <style>
+      h1{
+        text-align: center;
+        background-color: rgb(24, 187, 73);
+      }
+    </style>                
+      <form id="intento-form">
+        <h1 id="titulo" style="color: white;">UCB-WORDLE</h1>         
+        <label for="intento">Palabra: </label>        
+        <input type="text" id="intento" style="text-transform: uppercase;" minlength= "5" maxlength="5" />
+        <input type="submit" value="Adivinar" id="boton-adivinar" />    
+      </form>      
+      <div id="contenedorCuadrados">
+        <div id="cuadrados"></div>
+      </div>
+      <div id="pasos">
+        <h4> Pasos del Juego</h4>
+        <p> Ingresar una palabra real como intento.</p>
+        <p> Ver las pistas del intento dependiendo al color.</p>
+        <p> Ingresar una nueva palabra.</p>
+        <p> Por cada fin de juego cambia la palabra</p> 
+      </div>
+    <style>
+      #pasos{
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+      #contenedorCuadrados {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        overflow: hidden;
+      }
+
+      #cuadrados{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .cuadrado{
+        border: 2px solid rgb(58, 58, 60);
+        min-width: 60px;
+        min-height: 60px;
+        font-size: 50px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);        
+        text-transform: uppercase;        
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      form{
+        width: 400px;
+        padding: 10px;
+        margin: 0 auto;        
+      }      
+    </style>
+    <script type="module" src="./src/presenter.js"></script>
+  </body>
+</html>
