@@ -46,7 +46,8 @@ describe("UCB-Wordle  -> Pista letra en posicion incorrecta", () => {
     expect(wordle.lestrasPosIncorrecta("t")).toEqual("t");
   });
   it("En caso de que la palabra sea 'facil' y el intento 'prisa' deberia devoler 'mo'", () => {
-    const wordle = new Wordle("facil");
+    const wordle = new Wordle();
+    wordle.palabra = "facil";
     expect(wordle.lestrasPosIncorrecta("prisa")).toEqual("ia");
   });
 });
