@@ -51,6 +51,8 @@ intentoForm.addEventListener("submit", (event) => {
   }
   if(intentos==0){
     alert(juego.adivinar(intento))
+    intentoForm.reset()
+
   }            
   if(!myArray.includes(intento)){
     confirm("Palabra no esta en la lista");    
