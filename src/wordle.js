@@ -1,10 +1,10 @@
 import palabrasAleatoria from "./palabrasAleatoria";
 
 class Wordle{
-    constructor() {        
+    constructor() {
         this.palabra = palabrasAleatoria();
-    }    
-    adivinar(intento) {                   
+    }
+    adivinar(intento) {
         if(this.palabra == intento){
             return "¡ ¡ ¡ G  A  N  A  S  T  E ! ! ! "
         }

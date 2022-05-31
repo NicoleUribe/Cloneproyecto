@@ -43,16 +43,14 @@ intentoForm.addEventListener("submit", (event) => {
           espacio.style.background = "#707169";
         }         
         contadorEspacios++;    
-    }
+    }    
     intentoForm.reset()
   }
   if(juego.adivinar(intento) == "¡ ¡ ¡ G  A  N  A  S  T  E ! ! ! "){
     intentos = 0;
   }
   if(intentos==0){
-    alert(juego.adivinar(intento))
-    intentoForm.reset()
-
+    alert(juego.adivinar(intento))    
   }            
   if(!myArray.includes(intento)){
     confirm("Palabra no esta en la lista");    
